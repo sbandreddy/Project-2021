@@ -1,0 +1,236 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,11pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Lakshmi Srinivas Bandreddy} \\[5 pt]
+\href{https://github.com/sbandreddy}{\raisebox{-0.05\height}\faGithub\ sbandreddy} \ $|$ \ 
+\href{https://linkedin.com/in/lakshmi-srinivas-bandreddy}{\raisebox{-0.05\height}\faLinkedin\ Srinivas Bandreddy} \ $|$ \ 
+%\href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ mysite.com} \ $|$ \ %
+\href{mailto:sbandreddy07@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ sbandreddy07@gmail.com} \ $|$ \ 
+\href{tel:+91 8106071935}{\raisebox{-0.05\height}\faMobile \ +91 8106071935} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+\iffalse
+\section{About}
+I am a dedicated and skilled software engineer with a passion for developing efficient and scalable software solutions. Over the past three years, I have continuously improved my skills and contributed effectively to innovative projects. I am eager to leverage my expertise in a dynamic and challenging environment to deliver high-quality results and support the growth of the organization.
+\fi
+%----------------------------------------------------------------------------------------
+
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{\textbf{Education}}
+\noindent \textbf{RIMT University}, Mandi Gobindgarh \\
+Bachelor of Technology, Computer Science and Engineering, GPA: 8.2/10 \hfill 2017 - 2021
+
+
+%Experience
+\section{\textbf{Professional Experience}}
+
+\begin{tabularx}{\linewidth}{ @{}l X@{} }
+\textbf{Implementation Specialist, Alter Domus} & \raggedleft 2024 - 2025 \\
+\end{tabularx}
+\begin{itemize}
+    \item Worked as a client facing Implementation Specialist for AD’s proprietary Fund Administration SaaS Platform.
+    \item Configured Custom Data Visualization Dashboards as per the requirement for Fund Managers (GP).
+    \item Facilitated smooth onboarding for both Investors Accounts and P.E Funds onto the SaaS platform.
+    \item Provided go-live support to key Private Equity clients, acting as a link between customers and internal teams to relay feedback and suggest enhancements.
+    \item Managed 7 product modules simultaneously, creating and maintaining knowledge base articles, FAQs, and user guides to improve self-service.
+	\item Reduced implementation and support errors by maintaining detailed project plans on new features and best practices.
+    \item Monitored recurring support patterns, proactively recommended improvements, and participated in product QA/beta testing to provide customer-focused feedback.
+\end{itemize}
+
+\begin{tabularx}{\linewidth}{ @{}l X@{} }
+\textbf{Associate Software Engineer, Transcend Street India} & \raggedleft 2022 - 2024 \\
+\end{tabularx}
+\begin{itemize}
+    \item Worked extensively on Counterparty Clearing Houses (CCP's), Triparty Agents, and Qualified Financial Contracts (QFC).
+	\item Delivered more than 10 CCP’s (MBSCC, CME, SGX, ICE, LCH) and 2 Triparty Agents (BNYM, Clearstream) configurations to clients.
+	\item Developed a standardized framework and integrated the External Agent API’s and Data sources with Transcend’s Internal Data Analysis model for a seamless visualization of EOD/Intraday trade data.
+	\item Contributed significantly to the upgrade of the QFC Reporting module to align with FDIC’s recordkeeping requirements and rules.
+	\item Developed a python utility to automate data validation and comparison of the visualized client data, resulting in reduced manual testing inefficiencies. (Refer to Testing-Framework-utility on GitHub repo.)
+	\item Being well versed in the day-to-day functions of CCP’s has equipped me with a complete understanding of the trade reporting cycle.
+\end{itemize}
+
+
+
+
+
+
+%Projects
+\section{\textbf{Projects}}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Capstone: Rice Disease Image Classification} & \hfill {2021 - 2021} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Developed a Convolutional Neural Network (CNN) model to address the critical agricultural challenge of rice disease identification, classifying images of infected leaves into four classes: Healthy, Hispa, LeafBlast, and BrownSpot. The project involved data processing and training on a dataset of farm-field images, culminating in a model that achieved a high validation accuracy for multi-class image classification. (Skills: Deep Learning, CNN, Image Classification, Data Augmentation, Keras/TensorFlow). Refer to the GitHub link \href{https://github.com/sbandreddy/Project-2021}{here} for indepth details.}  \\
+
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Automation Testing Framework} & \hfill {2023 - 2024} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Developed a compact data conversion utility to automate the creation of structured Excel Workbooks from raw trade data. This tool served as the input driver for the Automation testing framework. By eliminating the manual configuration of these workbooks, which previously consumed 1–2 weeks per client, the project drastically reduced repetitive manual labor and significantly improved the quality and efficiency of the overall testing framework. Refer to the GitHub link \href{https://github.com/sbandreddy/Testing-Framework-Utility}{here} for implementation details.}  \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+
+%Certifications
+\section{\textbf{Certifications}}
+
+\begin{tabularx}{\linewidth}{ @{}l X@{} }
+\textbf{Data Science Bootcamp, \textnormal{365 Careers}} & \raggedleft {2021} \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l X@{} }
+\textbf{Introduction to Machine Learning, \textnormal{Microsoft}} & \raggedleft {2021} \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l X@{} }
+\textbf{Machine Learning Workshop, \textnormal{Microsoft}} & \raggedleft {2019} \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l X@{} }
+\textbf{Cyber Security, \textnormal{Station X}} & \raggedleft {2019} \\
+\end{tabularx}
+
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{\textbf{Skills}}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Programming Languages: &  \normalsize{Python, R, Java, C++}\\
+Libraries: &  \normalsize{NumPy, Pandas, Matplotlib, Scikit-learn, PyTorch, TensorFlow, Keras}\\
+Applications: & \normalsize{Power BI, Tableau, Jupyter Notebook, CLI}\\
+Databases: &  \normalsize{MySQL, Microsoft SQL, Oracle, ElasticSearch}\\
+Web Technologies: &  \normalsize{HTML, CSS, PHP}\\
+Operating Systems: &  \normalsize{Windows, Linux, Mac}\\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+\section{\textbf{Languages}}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+ \normalsize{English, Telugu, Hindi}\\
+\end{tabularx}
+
+%\vfill
+%\center{\footnotesize Last updated: \today}
+
+\end{document}
